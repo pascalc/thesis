@@ -1,0 +1,264 @@
+\section{Talking to Machines}
+
+After researching microworlds and developing my theoretical framework, I
+felt ready to design my own microworld, which I named \emph{Talking to
+Machines}.
+
+Concretely, this entailed designing an environment in which an
+idea-implementation-evaluation loop could be carried out. For the
+reasons discussed in the previous section, I decided to host this
+environment within the web browser.
+
+This decision brought with it some constraints: the interface would have
+to be built from HTML and CSS, and interactivity would have to either be
+supplied by client-side JavaScript, or a server-side evaluation
+environment. But this decision also enabled the increased accessibility
+discussed earlier.
+
+I decided to focus this microworld on programming, as that is an
+activity I have a lot of experience with. In a web environment, that
+would entail using JavaScript as the programming language, as that is
+available on the client-side, and removes the need to execute a
+different language on the server and then send back the results.
+
+However, I'm not a great fan of JavaScript when it comes to teaching
+beginners to program (see here for why\{wat\}). Instead, I chose to use
+a dialect of Lisp - Clojure (in its JavaScript-hosted form,
+ClojureScript) - as Lisp has a history of being a language well-suited
+for beginners (MIT used it in an introductory programming course for
+years\{sicp\}).
+
+\subsection{Evaluating ClojureScript forms in the browser (warning:
+technical)}
+
+At the time of creating \emph{Talking to Machines}, there was no way to
+dynamically evaluate ClojureScript in the browser, as the reader and
+compiler for ClojureScript forms was in fact a Clojure program that
+could only run on the JVM.
+
+The following makes this rather complicated concept a little easier to
+understand:
+
+The ClojureScript syntax for printing ``Hello World!'' to the console
+looks like this: \textgreater{} (.log js/console ``Hello World!'')
+
+If ClojureScript could be evaluated in the browser, you'd expect to be
+able to do something like this, in \emph{JavaScript}: \textgreater{}
+ClojureScript.eval(`(.log js/console ``Hello World!'')') and have
+``Hello World!'' printed to the console.
+
+Unfortunately, in standard ClojureScript, you can't do that (at the time
+of creating \emph{Talking to Machines}).
+
+Instead, a \emph{Clojure} program, running on the JVM (i.e.~certainly
+not in the browser), has to \emph{transpile} a ClojureScript file to a
+JavaScript file, i.e. \textgreater{} (.log js/console ``Hello World!'')
+in \texttt{foo.cljs} becomes\\\textgreater{} console.log(``Hello
+World!'') in the output file \texttt{foo.js}, and \texttt{foo.js}
+\emph{is what is evaluated in the browser}.
+
+All this means that \textgreater{} ClojureScript.eval(`(.log js/console
+``Hello World!'')') doesn't happen in JavaScript. Instead, we have:
+\textgreater{} (emit (read `(.log js/console ``Hello World!'')'))
+=\textgreater{} `console.log(``Hello World!'')' in server-side Clojure,
+and \textgreater{} eval(`console.log(``Hello World!'')') in the browser
+(that's standard JavaScript \texttt{eval} there, no funny business).
+
+So what does this mess actually mean, practically?
+
+It means that if a user writes ClojureScript in the browser, we won't be
+able to evaluate what they wrote without having a backend Clojure
+process transpiling their code to JavaScript for us.
+
+This isn't actually a massive issue, as we still don't evaluate
+arbitrary code on the back-end, which would obviously be a Big Deal (we
+just transpile it instead), but it would introduce some network lag
+between the \textbf{implementation} and \textbf{evaluation} stages of
+our microworld loop.
+
+And as one of the points of my thesis is that the tighter the loop, the
+more engaging the experience, this was something I wanted to avoid if at
+all possible.
+
+\subsubsection{Kanaka to the rescue}
+
+Luckily for me, there was a fork of ClojureScript that did allow
+evaluation in the browser, written by a developer called Joel Martin
+(Kanaka on Github). At the time of writing it is still a fork, and
+hasn't been merged with ClojureScript core, probably because it contains
+``miscellaneous broken things that have not been tracked down yet''.
+
+But it was definitely good enough to evaluate ClojureScript for a
+microworld, and it probably took me less time to modify Martin's code to
+provide my wished-for \texttt{ClojureScript.eval} JavaScript function
+than it took me to explain why that was even necessary.
+
+\subsection{So why did I go to all this trouble?}
+
+This might seem like a very convoluted mess to get into just to avoid
+writing pure JavaScript, which, after all, is good enough for sites like
+Codecademy. That's a fair point but I believe that the declarative
+purity of ClojureScript forms makes up for the chaos going on behind the
+scenes. As you will soon see.
+
+\subsection{A better first impression of programming}
+
+Most very-first-introductions to a programming language, or programming
+in general, involve printing the text ``Hello World!'' to the screen.
+Later exercises usually include things like printing the numbers ``1 2 3
+4 5 6 7 8 9 10'', or adding up all integers less than 100.
+
+Though these feats may have been impressive 30 years ago (and might hold
+some intellectual curiosity today), today these things fail to blow
+anyone's socks off.
+
+Producing plaintext is far from unimportant (most webservers do little
+else), but in a world where technology means Oculus Rift and 4K Netflix,
+it's not really sexy.
+
+Is there something simple we can have beginners do, to explain functions
+and variables and loops, that is more interesting than printing text to
+the screen?
+
+We could try the activity that captivates children (and artists) all
+over the world: drawing things. With colours!
+
+\subsection{Declarative shapes}
+
+The most basic form of computation is a single function call. It is the
+simplest action that \emph{does} something (variable assignment does
+something too, but indirectly, setting things up for later function
+calls).
+
+It makes sense that drawing a shape to a screen should be the result of
+just one function call, instead of requiring a novice to construct a
+class, call methods on that class, and then draw that class to the
+screen after having acquired a graphics context.
+
+The more declarative this function call, the easier it is for a novice
+to deduce its meaning from what happens when its evaluated.
+
+Consider: \textgreater{} (circle 50\% 50\% (radius 50) (fill :red))
+
+To a non-programmer (and perhaps even a programmer unused to
+S-expressions), this line of text looks alien. It conforms to a very
+different kind of grammar than what we're used to reading.
+
+This is why, when I ask non-programmers what they think the ``50'' in
+the line above represents, they often have no idea. The text as a whole
+is just too strange for them to parse and guess that the proximity of
+``radius'' to ``50'', and the brackets that enclose them, means that the
+two tokens have something to do with each other.
+
+If we were in a static environment, the only way to learn about what the
+above text does would be to read about the syntax and grammar of Lisp.
+This is often how programming is approached, from a mathematical
+perspective. The only way to find out if you had a correct understanding
+of Lisp syntax and grammar would be to ask a teacher. The gap between
+\textbf{implementation} and \textbf{evaluation} would be so large that
+it would kill a lot of your motivation.
+
+Fortunately, \emph{Talking to Machines} is a microworld. This means that
+a student is able to change the above text to: \textgreater{} (circle
+50\% 50\% (radius 100) (fill :red))
+
+As soon as this happens, the text is \textbf{evaluated}, and draws a
+\emph{bigger} circle on the screen. Immediately, the student realises
+that the number that was ``50'' but is now ``100'' somehow affects the
+\emph{size} of the drawn circle.
+
+Through their interactions, the student has \textbf{constructed} this
+knowledge for themselves. According to our constructionist learning
+theory, this knowledge should be far more effective than being
+\emph{told} that the \texttt{(radius 50)} form controls the radius of
+the drawn circle.
+
+\subsection{Looping in \emph{Talking to Machines}}
+
+Let's see how \emph{Talking to Machines} supports our microworld loop.
+
+Once a student is somewhat familiar with how the microworld works, they
+can come up with the following \textbf{ideas}: * I want to draw a red
+circle * Can I make it blue? * Can I make it bigger? * Can I move it
+around? * Can I draw more than one? * Can I draw other shapes? * Can I
+animate them? * etc.
+
+Their \textbf{implementations} of these ideas take the form of composed
+function calls. These function calls are immediately \textbf{evaluated},
+and the student sees visually how their change of code affected the
+change in what was drawn to the screen.
+
+For example, the first idea above, of drawing a red circle, looks like
+this: \textgreater{} (circle 50\% 50\% (radius 100) (fill :red))
+
+Making it blue looks like this: \textgreater{} (circle 50\% 50\% (radius
+100) (fill :blue))
+
+Making it bigger: \textgreater{} (circle 50\% 50\% (radius 150) (fill
+:blue))
+
+Moving it around: \textgreater{} (circle 25\% 50\% (radius 150) (fill
+:blue))
+
+As we can see, the student iterates the loop: 1. Hmm, what does this do?
+(idea) 2. I'll tweak it! (implementation) 3. Ah, that's what that does!
+(evaluation) 4. Hmm, but what about \emph{this}? (loop) and iterations
+happen \emph{extremely fast}. This keeps motivation and engagement high.
+
+The student learns something on every iteration, which feels rewarding,
+which pushes them to iterate again.
+
+\subsection{Limitations of this microworld}
+
+\emph{Talking to Machines} was a success on a \emph{structural} level,
+but a failure on a \emph{practical} level, at least given the time
+constraints of this thesis.
+
+It successfully enabled the learning iterations of a microworld, but it
+required too much prior knowledge of students for me to be able to
+conduct workshops with many students at once.
+
+\emph{Talking to Machines} offered learning about two topics: the syntax
+of a programming language, and hands-on knowledge of computation. These
+are distinct: a programmer can know that she wants to write a recursive
+loop, but not know the syntax for this in JavaScript.
+
+Hands-on knowledge about computation is hard to acquire without knowing
+a little syntax in at least one programming language. This is because if
+the \textbf{implementation} of your computational \textbf{idea} (such as
+how to print only odd integers less than 100) can only be expressed in
+pseudocode, you will only be able to \textbf{evaluate} your idea by
+writing it out by hand or asking a teacher if you are correct.
+
+Being able to write in the syntax of a programming language means being
+able to \textbf{implement} your computational \textbf{ideas} in a form
+that can be instantly \textbf{evaluated} by a machine. On the bright
+side, this means that you can learn things in an effective, engaging way
+without having to ask for the permission or judgement of a human teacher
+or academic institution.
+
+The downside is that you need to learn that syntax before you can reap
+the rewards of machine evaluation. It is possible for students of
+\emph{Talking to Machines} to learn Lisp syntax by trial and error, by
+chopping and changing parentheses until the code evaluates. But this is
+not the most efficient way to learn syntax, so engagement suffers as a
+result.
+
+Instead, students could be guided through their first attempts to
+produce syntactically correct code, for example: \textgreater{} A Lisp
+function call has the form (f x) where f is a function and x is the
+argument. Try calling the ``circle'' function with the argument ``50''!
+
+This kind of guidance takes time to do well, either by employing many
+human assistants with the skill to teach students about syntax, or by
+programming a tutorial in which the computer itself guides the student.
+
+I didn't have this kind of time. Ideally, I wanted to explore the
+knowledge-constructing effects of microworlds on students, without
+having to teach them a new syntax beforehand.
+
+\subsection{This lead me to create a microworld I called \emph{Narrative
+Roulette}.}
+
+\{wat\} https://www.destroyallsoftware.com/talks/wat \{sicp\}
+\href{http://mitpress.mit.edu/sicp/course.html}{http://mitpress.mit.edu/sicp/course.html}
