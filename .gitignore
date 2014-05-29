@@ -1,1 +1,6 @@
 _book/
+.aux
+.log
+.tex.aux
+.out
+.plist
