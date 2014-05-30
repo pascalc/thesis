@@ -10,9 +10,9 @@
 \contentsline {subsection}{Flappy Bird vs Minecraft}{6}{section*.8}
 \contentsline {subsection}{What other activities can be microworlds?}{7}{section*.9}
 \contentsline {subsubsection}{Jamming}{7}{section*.10}
-\contentsline {subsubsection}{Creative writing}{7}{section*.11}
+\contentsline {subsubsection}{Creative writing}{8}{section*.11}
 \contentsline {subsubsection}{Programming}{8}{section*.12}
-\contentsline {subsection}{Degrees of Microworld}{8}{section*.13}
+\contentsline {subsection}{Degrees of Microworld}{9}{section*.13}
 \contentsline {section}{\numberline {1.3}Microworlds enable learning}{10}{section.1.3}
 \contentsline {subsection}{John Dewey}{10}{section*.14}
 \contentsline {subsection}{Jean Piaget}{10}{section*.15}
