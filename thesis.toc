@@ -26,48 +26,48 @@
 \contentsline {subsection}{What does engagement lead to?}{14}{section*.22}
 \contentsline {section}{\numberline {1.5}Virtual microworlds}{15}{section.1.5}
 \contentsline {subsection}{CodePen (\href {http://codepen.io/}{http://codepen.io/})}{16}{section*.23}
-\contentsline {subsection}{Pacemaker}{16}{section*.24}
-\contentsline {subsection}{Blogging systems (Tumblr / Medium / WordPress etc)}{16}{section*.25}
-\contentsline {chapter}{\numberline {2}Implementation}{17}{chapter.2}
-\contentsline {section}{\numberline {2.1}Talking to Machines}{18}{section.2.1}
-\contentsline {subsection}{Evaluating ClojureScript forms in the browser (warning: technical)}{18}{section*.26}
-\contentsline {subsubsection}{Kanaka to the rescue}{19}{section*.27}
-\contentsline {subsection}{So why did I go to all this trouble?}{19}{section*.28}
-\contentsline {subsection}{A better first impression of programming}{19}{section*.29}
-\contentsline {subsection}{Declarative shapes}{20}{section*.30}
-\contentsline {subsection}{Looping in \emph {Talking to Machines}}{20}{section*.31}
-\contentsline {subsection}{Limitations of this microworld}{21}{section*.32}
-\contentsline {subsection}{This lead me to create a microworld I called \emph {Narrative Roulette}.}{22}{section*.33}
-\contentsline {section}{\numberline {2.2}Narrative Roulette at Kungsholmens Gymnasium}{23}{section.2.2}
-\contentsline {subsection}{The benefits of being virtual}{23}{section*.34}
-\contentsline {subsection}{Narrative Roulette as a Microworld}{23}{section*.35}
-\contentsline {subsection}{How do you explore this microworld?}{24}{section*.36}
-\contentsline {subsection}{Why is this worth doing?}{24}{section*.37}
-\contentsline {subsection}{How are these texts evaluated?}{25}{section*.38}
-\contentsline {subsection}{How Anonymity Helps}{26}{section*.39}
-\contentsline {subsection}{Limitations of Narrative Roulette}{27}{section*.40}
-\contentsline {section}{\numberline {2.3}Narrative Roulette on the Web}{28}{section.2.3}
-\contentsline {subsection}{NarrativeRoulette.com}{28}{section*.41}
-\contentsline {subsection}{Is this still a microworld?}{28}{section*.42}
-\contentsline {subsection}{How did this work in practice?}{29}{section*.43}
-\contentsline {subsection}{NarrativeRoulette.com takeaways}{29}{section*.44}
-\contentsline {chapter}{\numberline {3}Evaluation}{30}{chapter.3}
-\contentsline {section}{\numberline {3.1}What does this mean for education?}{31}{section.3.1}
-\contentsline {subsection}{Did iterating the loop lead to learning?}{31}{section*.45}
-\contentsline {subsection}{Microworlds vs Traditional Learning}{31}{section*.46}
-\contentsline {subsection}{Agile methods vs The Waterfall Model}{32}{section*.47}
-\contentsline {subsection}{Are there schools teaching this now?}{32}{section*.48}
-\contentsline {subsubsection}{Berghs School of Communication}{32}{section*.49}
-\contentsline {subsubsection}{Hyper Island.}{32}{section*.50}
-\contentsline {subsection}{How can the peer-evaluation of Narrative Roulette be expanded to other microworlds?}{33}{section*.51}
-\contentsline {subsection}{Should we drop lectures, exercise sessions and exams?}{33}{section*.52}
-\contentsline {section}{\numberline {3.2}What problems are there with microworlds?}{34}{section.3.2}
-\contentsline {subsection}{Fully embracing microworlds}{34}{section*.53}
-\contentsline {subsection}{From lesson plans to microworld construction}{34}{section*.54}
-\contentsline {subsection}{Transfer of control}{35}{section*.55}
-\contentsline {subsection}{Keeping microworlds at arm's-length}{35}{section*.56}
-\contentsline {subsection}{The Minecraft model}{35}{section*.57}
-\contentsline {section}{\numberline {3.3}Conclusions}{37}{section.3.3}
-\contentsline {subsection}{What is needed for microworlds to succeed?}{37}{section*.58}
-\contentsline {subsection}{When could this happen?}{37}{section*.59}
-\contentsline {subsection}{Reality check}{38}{section*.60}
+\contentsline {subsection}{Pacemaker (\url {http://pacemaker.net/})}{16}{section*.24}
+\contentsline {subsection}{Blogging}{16}{section*.25}
+\contentsline {chapter}{\numberline {2}Implementation}{18}{chapter.2}
+\contentsline {section}{\numberline {2.1}Talking to Machines}{19}{section.2.1}
+\contentsline {subsection}{Evaluating ClojureScript forms in the browser (warning: technical)}{19}{section*.26}
+\contentsline {subsubsection}{Kanaka to the rescue}{20}{section*.27}
+\contentsline {subsection}{So why did I go to all this trouble?}{20}{section*.28}
+\contentsline {subsection}{A better first impression of programming}{20}{section*.29}
+\contentsline {subsection}{Declarative shapes}{21}{section*.30}
+\contentsline {subsection}{Looping in \emph {Talking to Machines}}{21}{section*.31}
+\contentsline {subsection}{Limitations of this microworld}{22}{section*.32}
+\contentsline {subsection}{This lead me to create a microworld I called \emph {Narrative Roulette}.}{23}{section*.33}
+\contentsline {section}{\numberline {2.2}Narrative Roulette at Kungsholmens Gymnasium}{24}{section.2.2}
+\contentsline {subsection}{The benefits of being virtual}{24}{section*.34}
+\contentsline {subsection}{Narrative Roulette as a Microworld}{24}{section*.35}
+\contentsline {subsection}{How do you explore this microworld?}{25}{section*.36}
+\contentsline {subsection}{Why is this worth doing?}{25}{section*.37}
+\contentsline {subsection}{How are these texts evaluated?}{26}{section*.38}
+\contentsline {subsection}{How Anonymity Helps}{27}{section*.39}
+\contentsline {subsection}{Limitations of Narrative Roulette}{28}{section*.40}
+\contentsline {section}{\numberline {2.3}Narrative Roulette on the Web}{29}{section.2.3}
+\contentsline {subsection}{NarrativeRoulette.com}{29}{section*.41}
+\contentsline {subsection}{Is this still a microworld?}{29}{section*.42}
+\contentsline {subsection}{How did this work in practice?}{30}{section*.43}
+\contentsline {subsection}{NarrativeRoulette.com takeaways}{30}{section*.44}
+\contentsline {chapter}{\numberline {3}Evaluation}{31}{chapter.3}
+\contentsline {section}{\numberline {3.1}What does this mean for education?}{32}{section.3.1}
+\contentsline {subsection}{Did iterating the loop lead to learning?}{32}{section*.45}
+\contentsline {subsection}{Microworlds vs Traditional Learning}{32}{section*.46}
+\contentsline {subsection}{Agile methods vs The Waterfall Model}{33}{section*.47}
+\contentsline {subsection}{Are there schools teaching this now?}{33}{section*.48}
+\contentsline {subsubsection}{Berghs School of Communication}{33}{section*.49}
+\contentsline {subsubsection}{Hyper Island.}{33}{section*.50}
+\contentsline {subsection}{How can the peer-evaluation of Narrative Roulette be expanded to other microworlds?}{34}{section*.51}
+\contentsline {subsection}{Should we drop lectures, exercise sessions and exams?}{34}{section*.52}
+\contentsline {section}{\numberline {3.2}What problems are there with microworlds?}{35}{section.3.2}
+\contentsline {subsection}{Fully embracing microworlds}{35}{section*.53}
+\contentsline {subsection}{From lesson plans to microworld construction}{35}{section*.54}
+\contentsline {subsection}{Transfer of control}{36}{section*.55}
+\contentsline {subsection}{Keeping microworlds at arm's-length}{36}{section*.56}
+\contentsline {subsection}{The Minecraft model}{36}{section*.57}
+\contentsline {section}{\numberline {3.3}Conclusions}{38}{section.3.3}
+\contentsline {subsection}{What is needed for microworlds to succeed?}{38}{section*.58}
+\contentsline {subsection}{When could this happen?}{38}{section*.59}
+\contentsline {subsection}{Reality check}{39}{section*.60}
