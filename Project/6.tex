@@ -2,10 +2,10 @@
 
 After researching microworlds and developing my theoretical framework, I
 felt ready to design my own microworld, which I named \emph{Talking to
-Machines}.
+Machines}. You can find it online at \url{http://draw.talkingtomachines.org}.
 
 Concretely, this entailed designing an environment in which an
-idea-implementation-evaluation loop could be carried out. For the
+\textbf{idea-implementation-evaluation} loop could be carried out. For the
 reasons discussed in the previous section, I decided to host this
 environment within the web browser.
 
@@ -22,49 +22,57 @@ available on the client-side, and removes the need to execute a
 different language on the server and then send back the results.
 
 However, I'm not a great fan of JavaScript when it comes to teaching
-beginners to program (see here for why\{wat\}). Instead, I chose to use
+beginners to program (see \href{https://www.destroyallsoftware.com/talks/wat}{here} for why). Instead, I chose to use
 a dialect of Lisp - Clojure (in its JavaScript-hosted form,
 ClojureScript) - as Lisp has a history of being a language well-suited
-for beginners (MIT used it in an introductory programming course for
-years\{sicp\}).
+for beginners (MIT has used it in an introductory \href{http://mitpress.mit.edu/sicp/course.html}{programming course} for years).
 
-\subsection{Evaluating ClojureScript forms in the browser (warning:
-technical)}
+\subsection{From ClojureScript to JavaScript}
 
 At the time of creating \emph{Talking to Machines}, there was no way to
 dynamically evaluate ClojureScript in the browser, as the reader and
 compiler for ClojureScript forms was in fact a Clojure program that
-could only run on the JVM.
+could only run on the Java Virtual Machine.
 
 The following makes this rather complicated concept a little easier to
 understand:
 
 The ClojureScript syntax for printing ``Hello World!'' to the console
-looks like this: \textgreater{} (.log js/console ``Hello World!'')
+looks like this: 
+
+\begin{verbatim}
+(.log js/console 'Hello World!')
+\end{verbatim}
 
 If ClojureScript could be evaluated in the browser, you'd expect to be
-able to do something like this, in \emph{JavaScript}: \textgreater{}
-ClojureScript.eval(`(.log js/console ``Hello World!'')') and have
-``Hello World!'' printed to the console.
+able to do something like this, in \textbf{JavaScript}: 
 
-Unfortunately, in standard ClojureScript, you can't do that (at the time
-of creating \emph{Talking to Machines}).
+\begin{verbatim}
+ClojureScript.eval("(.log js/console 'Hello World!')") 
+\end{verbatim}
 
-Instead, a \emph{Clojure} program, running on the JVM (i.e.~certainly
-not in the browser), has to \emph{transpile} a ClojureScript file to a
-JavaScript file, i.e. \textgreater{} (.log js/console ``Hello World!'')
-in \texttt{foo.cljs} becomes\\\textgreater{} console.log(``Hello
-World!'') in the output file \texttt{foo.js}, and \texttt{foo.js}
-\emph{is what is evaluated in the browser}.
+and have ``Hello World!'' printed to the console.
 
-All this means that \textgreater{} ClojureScript.eval(`(.log js/console
-``Hello World!'')') doesn't happen in JavaScript. Instead, we have:
-\textgreater{} (emit (read `(.log js/console ``Hello World!'')'))
-=\textgreater{} `console.log(``Hello World!'')' in server-side Clojure,
-and \textgreater{} eval(`console.log(``Hello World!'')') in the browser
-(that's standard JavaScript \texttt{eval} there, no funny business).
+Unfortunately, in standard ClojureScript, you can't do that yet.
 
-So what does this mess actually mean, practically?
+Instead, a \textbf{Clojure} program, running on the JVM (i.e. not in the browser), has to \textbf{transpile} a ClojureScript file to a
+JavaScript file. This means that 
+
+\begin{verbatim}
+(.log js/console "Hello World!")
+\end{verbatim}
+
+in the Clojurescript file, \texttt{foo.cljs}, is transpiled to
+
+\begin{verbatim}
+console.log("Hello World!")
+\end{verbatim}
+
+in the output Javascript file, \texttt{foo.js}, by a server-side process run during a compilation phase. 
+
+It is this file, \texttt{foo.js}, that is later evaluated in the web browser.
+
+\subsection{So what does this mess actually mean, practically?}
 
 It means that if a user writes ClojureScript in the browser, we won't be
 able to evaluate what they wrote without having a backend Clojure
@@ -72,32 +80,29 @@ process transpiling their code to JavaScript for us.
 
 This isn't actually a massive issue, as we still don't evaluate
 arbitrary code on the back-end, which would obviously be a Big Deal (we
-just transpile it instead), but it would introduce some network lag
+only transpile it), but it would introduce some network lag
 between the \textbf{implementation} and \textbf{evaluation} stages of
 our microworld loop.
 
-And as one of the points of my thesis is that the tighter the loop, the
-more engaging the experience, this was something I wanted to avoid if at
-all possible.
+We know the tighter the microworld loop, the more engaging the experience, so lag was something I wanted to avoid if at all possible.
 
 \subsubsection{Kanaka to the rescue}
 
-Luckily for me, there was a fork of ClojureScript that did allow
-evaluation in the browser, written by a developer called Joel Martin
-(Kanaka on Github). At the time of writing it is still a fork, and
+Luckily for me, there was a \href{https://github.com/kanaka/clojurescript}{fork of ClojureScript} that did allow evaluation in the browser, written by Joel Martin
+(``Kanaka'' on Github). At the time of writing it is still a fork, and
 hasn't been merged with ClojureScript core, probably because it contains
 ``miscellaneous broken things that have not been tracked down yet''.
 
 But it was definitely good enough to evaluate ClojureScript for a
 microworld, and it probably took me less time to modify Martin's code to
 provide my wished-for \texttt{ClojureScript.eval} JavaScript function
-than it took me to explain why that was even necessary.
+than it took me to explain why that was desirable.
 
-\subsection{So why did I go to all this trouble?}
+\subsection{Why did I go to all this trouble?}
 
 This might seem like a very convoluted mess to get into just to avoid
 writing pure JavaScript, which, after all, is good enough for sites like
-Codecademy. That's a fair point but I believe that the declarative
+\href{http://codecademy.com}{Codecademy}. That's a fair point but I believe that the declarative
 purity of ClojureScript forms makes up for the chaos going on behind the
 scenes. As you will soon see.
 
@@ -108,9 +113,8 @@ in general, involve printing the text ``Hello World!'' to the screen.
 Later exercises usually include things like printing the numbers ``1 2 3
 4 5 6 7 8 9 10'', or adding up all integers less than 100.
 
-Though these feats may have been impressive 30 years ago (and might hold
-some intellectual curiosity today), today these things fail to blow
-anyone's socks off.
+Though these feats may have been impressive 30 years ago, today these things fail to blow
+most people's socks off.
 
 Producing plaintext is far from unimportant (most webservers do little
 else), but in a world where technology means Oculus Rift and 4K Netflix,
@@ -122,6 +126,13 @@ the screen?
 
 We could try the activity that captivates children (and artists) all
 over the world: drawing things. With colours!
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{img/concentric_circles.png}
+\caption{The kind of thing that blows socks off.}
+\label{overflow}
+\end{figure}
 
 \subsection{Declarative shapes}
 
@@ -138,39 +149,67 @@ screen after having acquired a graphics context.
 The more declarative this function call, the easier it is for a novice
 to deduce its meaning from what happens when its evaluated.
 
-Consider: \textgreater{} (circle 50\% 50\% (radius 50) (fill :red))
+Consider: 
+
+\begin{verbatim}
+(circle
+ (position "50%" "50%")
+ (radius 100)
+ (fill "red"))
+\end{verbatim}
 
 To a non-programmer (and perhaps even a programmer unused to
 S-expressions), this line of text looks alien. It conforms to a very
 different kind of grammar than what we're used to reading.
 
-This is why, when I ask non-programmers what they think the ``50'' in
+This is why, when I ask non-programmers what they think the \texttt{100} in
 the line above represents, they often have no idea. The text as a whole
 is just too strange for them to parse and guess that the proximity of
-``radius'' to ``50'', and the brackets that enclose them, means that the
+\texttt{radius} to \texttt{100}, and the brackets that enclose them, means that the
 two tokens have something to do with each other.
 
 If we were in a static environment, the only way to learn about what the
-above text does would be to read about the syntax and grammar of Lisp.
-This is often how programming is approached, from a mathematical
+above text does would be to read about the syntax and grammar of Lisp, and the semantics of \emph{Talking to Machines}.
+This is often how programming is approached: from a mathematical
 perspective. The only way to find out if you had a correct understanding
-of Lisp syntax and grammar would be to ask a teacher. The gap between
+of syntax, grammar and semantics would be to ask a teacher. The gap between
 \textbf{implementation} and \textbf{evaluation} would be so large that
 it would kill a lot of your motivation.
 
 Fortunately, \emph{Talking to Machines} is a microworld. This means that
-a student is able to change the above text to: \textgreater{} (circle
-50\% 50\% (radius 100) (fill :red))
+a student can \textbf{evaluate} the above text, right in the browser, to render:
 
-As soon as this happens, the text is \textbf{evaluated}, and draws a
-\emph{bigger} circle on the screen. Immediately, the student realises
-that the number that was ``50'' but is now ``100'' somehow affects the
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=20mm]{img/red_circle.png}
+\caption{The meaning of the S-expression}
+\label{overflow}
+\end{figure}
+
+Then, after processing this visual feedback, the student might have an idea about what the \texttt{(radius 100)} form does, and decide to implement her idea by changing that form to \texttt{(radius 200)}. 
+
+\begin{verbatim}
+(circle
+ (position "50%" "50%")
+ (radius 200)
+ (fill "red"))
+\end{verbatim}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{img/big_red_circle.png}
+\caption{Doubling the radius to 200}
+\label{overflow}
+\end{figure}
+
+As soon as this modified text is \textbf{evaluated}, a \emph{bigger} circle is drawn on the screen. Immediately, the student realises
+that the number that was \texttt{100} but is now \texttt{200} somehow affects the
 \emph{size} of the drawn circle.
 
 Through their interactions, the student has \textbf{constructed} this
 knowledge for themselves. According to our constructionist learning
 theory, this knowledge should be far more effective than being
-\emph{told} that the \texttt{(radius 50)} form controls the radius of
+\emph{told} that the \texttt{(radius 100)} form controls the radius of
 the drawn circle.
 
 \subsection{Looping in \emph{Talking to Machines}}
@@ -178,34 +217,68 @@ the drawn circle.
 Let's see how \emph{Talking to Machines} supports our microworld loop.
 
 Once a student is somewhat familiar with how the microworld works, they
-can come up with the following \textbf{ideas}: * I want to draw a red
-circle * Can I make it blue? * Can I make it bigger? * Can I move it
-around? * Can I draw more than one? * Can I draw other shapes? * Can I
-animate them? * etc.
+can come up with the following \textbf{ideas}: 
+
+\begin{itemize}
+\item I want to draw a red circle. 
+\item Can I make it blue? 
+\item Can I make it bigger?
+\item Can I move it around? 
+\item Can I draw more than one? 
+\item Can I draw other shapes? 
+\item Can I animate them?
+\item etc.
+\end{itemize}
 
 Their \textbf{implementations} of these ideas take the form of composed
 function calls. These function calls are immediately \textbf{evaluated},
 and the student sees visually how their change of code affected the
 change in what was drawn to the screen.
 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=115mm]{img/ttmachines_interface.png}
+\caption{The Talking to Machines microworld interface}
+\label{overflow}
+\end{figure}
+
 For example, the first idea above, of drawing a red circle, looks like
-this: \textgreater{} (circle 50\% 50\% (radius 100) (fill :red))
+this: 
 
-Making it blue looks like this: \textgreater{} (circle 50\% 50\% (radius
-100) (fill :blue))
+\begin{verbatim}
+(circle (position 50% 50%) (radius 100) (fill "red"))
+\end{verbatim}
 
-Making it bigger: \textgreater{} (circle 50\% 50\% (radius 150) (fill
-:blue))
+Making it blue looks like this:
 
-Moving it around: \textgreater{} (circle 25\% 50\% (radius 150) (fill
-:blue))
+\begin{verbatim}
+(circle (position 50% 50%) (radius 100) (fill "blue"))
+\end{verbatim}
 
-As we can see, the student iterates the loop: 1. Hmm, what does this do?
-(idea) 2. I'll tweak it! (implementation) 3. Ah, that's what that does!
-(evaluation) 4. Hmm, but what about \emph{this}? (loop) and iterations
-happen \emph{extremely fast}. This keeps motivation and engagement high.
+Making it bigger:
 
-The student learns something on every iteration, which feels rewarding,
+\begin{verbatim}
+(circle (position 50% 50%) (radius 200) (fill "blue"))
+\end{verbatim}
+
+Moving it around: 
+
+\begin{verbatim}
+(circle (position 10% 50%) (radius 200) (fill "blue"))
+\end{verbatim}
+
+As we can see, the student iterates the following loop \emph{extremely fast}: 
+
+\begin{enumerate}
+\item Hmm, what does this do? (idea) 
+\item I'll tweak it! (implementation) 
+\item Ah, that's what that does! (evaluation) 
+\item Hmm, but what about \emph{this}? (GOTO 1) 
+\end{enumerate}
+
+This keeps engagement high.
+
+The student learns something new on every iteration, which feels rewarding,
 which pushes them to iterate again.
 
 \subsection{Limitations of this microworld}
@@ -232,22 +305,23 @@ writing it out by hand or asking a teacher if you are correct.
 
 Being able to write in the syntax of a programming language means being
 able to \textbf{implement} your computational \textbf{ideas} in a form
-that can be instantly \textbf{evaluated} by a machine. On the bright
-side, this means that you can learn things in an effective, engaging way
+that can be instantly \textbf{evaluated} by a machine. The advantage of this is that you can learn things in an effective, engaging way
 without having to ask for the permission or judgement of a human teacher
 or academic institution.
 
 The downside is that you need to learn that syntax before you can reap
 the rewards of machine evaluation. It is possible for students of
-\emph{Talking to Machines} to learn Lisp syntax by trial and error, by
+\emph{Talking to Machines} to learn Lisp syntax through trial and error, by
 chopping and changing parentheses until the code evaluates. But this is
 not the most efficient way to learn syntax, so engagement suffers as a
 result.
 
 Instead, students could be guided through their first attempts to
-produce syntactically correct code, for example: \textgreater{} A Lisp
-function call has the form (f x) where f is a function and x is the
-argument. Try calling the ``circle'' function with the argument ``50''!
+produce syntactically correct code, for example, being told: 
+
+\begin{quote}
+A Lisp function call has the form \texttt{(f x)} where \texttt{f} is a function and \texttt{x} is the argument. Try calling the \texttt{circle} function with the argument \texttt{50}!
+\end{quote}
 
 This kind of guidance takes time to do well, either by employing many
 human assistants with the skill to teach students about syntax, or by
@@ -257,8 +331,4 @@ I didn't have this kind of time. Ideally, I wanted to explore the
 knowledge-constructing effects of microworlds on students, without
 having to teach them a new syntax beforehand.
 
-\subsection{This lead me to create a microworld I called \emph{Narrative
-Roulette}.}
-
-\{wat\} https://www.destroyallsoftware.com/talks/wat \{sicp\}
-\href{http://mitpress.mit.edu/sicp/course.html}{http://mitpress.mit.edu/sicp/course.html}
+This is what led me to create another microworld, which will be the focus of the next section.
