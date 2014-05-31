@@ -41,34 +41,34 @@
 \contentsline {subsection}{Limitations of this microworld}{26}{section*.34}
 \contentsline {section}{\numberline {2.2}Narrative Roulette}{27}{section.2.2}
 \contentsline {subsection}{The benefits of being virtual}{27}{section*.35}
-\contentsline {subsection}{Narrative Roulette as a Microworld}{27}{section*.36}
+\contentsline {subsection}{Narrative Roulette as a microworld}{28}{section*.36}
 \contentsline {subsection}{How do you explore this microworld?}{28}{section*.37}
-\contentsline {subsection}{Why is this worth doing?}{28}{section*.38}
-\contentsline {subsection}{How are these texts evaluated?}{29}{section*.39}
-\contentsline {subsection}{How Anonymity Helps}{30}{section*.40}
+\contentsline {subsection}{Why is this worth doing?}{29}{section*.38}
+\contentsline {subsection}{How are these texts evaluated?}{30}{section*.39}
+\contentsline {subsection}{How anonymity helps}{31}{section*.40}
 \contentsline {subsection}{Limitations of Narrative Roulette}{31}{section*.41}
-\contentsline {section}{\numberline {2.3}Narrative Roulette on the Web}{32}{section.2.3}
-\contentsline {subsection}{NarrativeRoulette.com}{32}{section*.42}
-\contentsline {subsection}{Is this still a microworld?}{32}{section*.43}
-\contentsline {subsection}{How did this work in practice?}{33}{section*.44}
-\contentsline {subsection}{NarrativeRoulette.com takeaways}{33}{section*.45}
-\contentsline {chapter}{\numberline {3}Evaluation}{34}{chapter.3}
-\contentsline {section}{\numberline {3.1}What does this mean for education?}{35}{section.3.1}
-\contentsline {subsection}{Did iterating the loop lead to learning?}{35}{section*.46}
-\contentsline {subsection}{Microworlds vs Traditional Learning}{35}{section*.47}
-\contentsline {subsection}{Agile methods vs The Waterfall Model}{36}{section*.48}
-\contentsline {subsection}{Are there schools teaching this now?}{36}{section*.49}
-\contentsline {subsubsection}{Berghs School of Communication}{36}{section*.50}
-\contentsline {subsubsection}{Hyper Island.}{36}{section*.51}
-\contentsline {subsection}{How can the peer-evaluation of Narrative Roulette be expanded to other microworlds?}{37}{section*.52}
-\contentsline {subsection}{Should we drop lectures, exercise sessions and exams?}{37}{section*.53}
-\contentsline {section}{\numberline {3.2}What problems are there with microworlds?}{38}{section.3.2}
-\contentsline {subsection}{Fully embracing microworlds}{38}{section*.54}
-\contentsline {subsection}{From lesson plans to microworld construction}{38}{section*.55}
-\contentsline {subsection}{Transfer of control}{39}{section*.56}
-\contentsline {subsection}{Keeping microworlds at arm's-length}{39}{section*.57}
-\contentsline {subsection}{The Minecraft model}{39}{section*.58}
-\contentsline {section}{\numberline {3.3}Conclusions}{41}{section.3.3}
-\contentsline {subsection}{What is needed for microworlds to succeed?}{41}{section*.59}
-\contentsline {subsection}{When could this happen?}{41}{section*.60}
-\contentsline {subsection}{Reality check}{42}{section*.61}
+\contentsline {section}{\numberline {2.3}Narrative Roulette on the Web}{33}{section.2.3}
+\contentsline {subsection}{NarrativeRoulette.com}{33}{section*.42}
+\contentsline {subsection}{Is this still a microworld?}{33}{section*.43}
+\contentsline {subsection}{How did this work in practice?}{34}{section*.44}
+\contentsline {subsection}{NarrativeRoulette.com takeaways}{34}{section*.45}
+\contentsline {chapter}{\numberline {3}Evaluation}{35}{chapter.3}
+\contentsline {section}{\numberline {3.1}What does this mean for education?}{36}{section.3.1}
+\contentsline {subsection}{Did iterating the loop lead to learning?}{36}{section*.46}
+\contentsline {subsection}{Microworlds vs Traditional Learning}{36}{section*.47}
+\contentsline {subsection}{Agile methods vs The Waterfall Model}{37}{section*.48}
+\contentsline {subsection}{Are there schools teaching this now?}{37}{section*.49}
+\contentsline {subsubsection}{Berghs School of Communication}{37}{section*.50}
+\contentsline {subsubsection}{Hyper Island.}{37}{section*.51}
+\contentsline {subsection}{How can the peer-evaluation of Narrative Roulette be expanded to other microworlds?}{38}{section*.52}
+\contentsline {subsection}{Should we drop lectures, exercise sessions and exams?}{38}{section*.53}
+\contentsline {section}{\numberline {3.2}What problems are there with microworlds?}{39}{section.3.2}
+\contentsline {subsection}{Fully embracing microworlds}{39}{section*.54}
+\contentsline {subsection}{From lesson plans to microworld construction}{39}{section*.55}
+\contentsline {subsection}{Transfer of control}{40}{section*.56}
+\contentsline {subsection}{Keeping microworlds at arm's-length}{40}{section*.57}
+\contentsline {subsection}{The Minecraft model}{40}{section*.58}
+\contentsline {section}{\numberline {3.3}Conclusions}{42}{section.3.3}
+\contentsline {subsection}{What is needed for microworlds to succeed?}{42}{section*.59}
+\contentsline {subsection}{When could this happen?}{42}{section*.60}
+\contentsline {subsection}{Reality check}{43}{section*.61}
