@@ -1,33 +1,4 @@
-\section{What does this mean for education?}
-
-\emph{Talking to Machines} was a microworld. We saw from its structure
-how it could enable learning, but we decided it was impractical to test
-in a classroom setting. \emph{Narrative Roulette} kept the same
-structure, but changed domain from programming languages to natural
-language, to make the microworld more accessible.
-
-\emph{Narrative Roulette} was engaging: there were
-\textless{}X\textgreater{} submissions by \textless{}Y\textgreater{}
-students in three obligatory sessions at Kungsholmens Gymnasium. This
-means that \textless{}Y\textgreater{} students iterated the microworld
-loop \emph{at least} \textless{}X\textgreater{} times.
-
-Why? While writing, students must iterate the loop at a micro-level in
-their own heads (or on their own screens): they have ideas; implement
-them; read them back; and then update their ideas. The lower bound for a
-student's number of iterations of the loop is 1 per submission. This
-occurs if they do \emph{everything right the first time}. In that case,
-they have an idea, implement it, and evaluate it to be perfect;
-impossible to improve. Then they send in their submission. Given this,
-it makes sense to assume most students iterate the loop multiple times
-per submission.
-
-\subsection{Did iterating the loop lead to learning?}
-
-\textless{}\textless{} INSERT EVIDENCE OF INSIGHT, FROM SUBMISSIONS,
-HERE \textgreater{}\textgreater{}
-
-\subsection{Microworlds vs Traditional Learning}
+\section{What do microworlds mean for education?}
 
 Let's compare the structure of traditional teaching methods with
 microworlds. Traditional teaching is often split into three activities:
@@ -44,8 +15,7 @@ difference between ideas in lectures and ideas in microworlds is that
 ideas in lectures are \emph{external}. They are other people's ideas,
 such as ``Recursive loops never terminate if you leave out a
 base-case''. In a microworld, the ideas you have are \emph{internal},
-your own: ``If I write this base-case, my loop will terminate. Oh, I was
-wrong''.
+your own: ``If I write this base-case, my loop will terminate.''.
 
 Exercises correspond to \textbf{implementation}. However, unlike
 microworlds, traditional exercise sessions have students implementing
@@ -57,8 +27,8 @@ help me draw a right-angled triangle.''
 Exams are the \textbf{evaluation} stage. Unlike microworlds, exams do
 not give instant feedback. Failing at problem-solving in an exam is not
 a learning experience, it results in a period of uncertainty, which ends
-leaving you with a lower grade. If having your exam marked by a teacher
-taught you something - perhaps how to solve a problem correctly - after
+when you receive a grade lower than you were expecting. If having your exam marked by a teacher
+taught you something, perhaps how to solve a problem correctly, after
 the course is over, you have no way to apply that knowledge, or to prove
 that you now have it.
 
@@ -72,22 +42,25 @@ are spread out in time. A microworld places these components in a tight
 loop that is iterated many times at speed. It is for this reason that
 microworlds lead to more learning than traditional teaching methods.
 
-\subsection{Agile methods vs The Waterfall Model}
+\subsection{Agile methods vs The Waterfall Method}
 
 There are echoes of this comparison in Software Engineering ideology.
 Traditional teaching methods arguably correspond with The Waterfall
-Method. The Waterfall Method consists of\{wiki:water\}: 1. Requirements
-and Design (Microworld \textbf{idea}s). 2. Implementation (Microworld
-\textbf{implementation~}, obviously). 3. Verification (Microworld
-\textbf{evaluation}).
+Method. The Waterfall Method consists of \cite{wiki:waterfall}: 
+
+\begin{enumerate}
+\item Requirements and Design (Microworld \textbf{idea}s). 
+\item Implementation (Microworld \textbf{implementation}, obviously). 
+\item Verification (Microworld \textbf{evaluation}).
+\end{enumerate}
 
 As in traditional teaching, these steps are separated in time. The
 requirements and software design are done first, before any
 implementation. Then the implementation is carried out. Finally, the
 implementation is verified by the customer.
 
-According to Dean Leffingwell and many others, ``the Waterfall Model
-doesn't work''\{leffingwell\}. Instead, most modern software engineers
+According to Dean Leffingwell and many others, ``the Waterfall Method
+doesn't work''\cite{leffingwell}. Instead, most modern software engineers
 prefer agile methods.
 
 These agile methods move the requirements, design, implementation and
@@ -98,14 +71,15 @@ methods make software engineering into a microworld.
 
 \subsubsection{Berghs School of Communication}
 
-Berghs School of Communication uses Action Based Learning, a philosophy
-that is extremely similar to microworlds as defined in this paper.
-\href{http://www.berghs.se/content/berghs-pedagogik}{http://www.berghs.se/content/berghs-pedagogik}
+Berghs School of Communication, an educational institution in Stockholm, uses Action-Based Learning, a philosophy that is similar to microworlds as defined in this paper.
 
-\subsubsection{Hyper Island.}
+Read about their pedagogy \href{http://www.berghs.se/content/berghs-pedagogik}{here} (Swedish). 
 
-Hyper Island use ``constructivist methodology''.
-\href{http://www.hyperisland.com/singapore/sgma/philosophy}{http://www.hyperisland.com/singapore/sgma/philosophy}
+\subsubsection{Hyper Island}
+
+Hyper Island, a global educational institution, uses ``constructivist methodology''.
+
+Read about their philosophy \href{http://www.hyperisland.com/singapore/sgma/philosophy}{here}.
 
 \subsection{How can the peer-evaluation of Narrative Roulette be
 expanded to other microworlds?}
@@ -124,11 +98,11 @@ programming microworld we can count how many other students interact at
 length with a program. The sharing and discussing behaviour remain the
 same.
 
-A constraint is that only ``projects'' can be evaluated in this way.
-This method is better for a consumable product than for the solutions to
-a problem set. But in fact this is entirely intentional: it forces us to
+A constraint is that only ``project work'' can be evaluated in this way.
+This method is better for work in the form of a consumable product than in the form of solutions to
+a problem set. This is entirely intentional: it forces us to
 use microworlds to enable students to create ``public entities'', which
-was a defining feature of constructivism.
+is a defining feature of constructivism.
 
 \subsection{Should we drop lectures, exercise sessions and exams?}
 
@@ -161,15 +135,3 @@ evaluation discussed above, but it's possible such a dramatic change in
 the structure of education would be met with resistance. This is the
 focus of the next section.
 
-\ctable[pos = H, center, botcap]{ll}
-{% notes
-}
-{% rows
-\FL
-\{wiki & :water\}
-\href{http://en.wikipedia.org/wiki/Waterfall\_model}{http://en.wikipedia.org/wiki/Waterfall\_model}
-\\\noalign{\medskip}
-\{leff & ingwell\} Dean Leffingwell, Scaling Software Agility: Best
-Practices for Large Enterprises
-\LL
-}
