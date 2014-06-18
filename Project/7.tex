@@ -26,7 +26,21 @@ submissions and discuss them.
 \end{figure}
 
 \subsection{Implementing \textit{Narrative Roulette}}
-TODO: GOES HERE!
+
+\textit{Narrative Roulette} can be described as a distributed, real-time system for collaborative schoolwork. Students all run local instances of the client, which is built using the \href{http://angularjs.org}{AngularJS}\footnote{http://angularjs.org} \textbf{Javascript} MVC framework. They run these instances in parallel, and use them to write their texts using a cutting-edge \textbf{HTML} editor. 
+
+When they are done, they post their texts to the backend, which runs on \textbf{Python}, and uses \href{http://flask.pocoo.org/}{\textbf{Flask}}\footnote{http://flask.pocoo.org/} for web routing, \href{https://flask-restless.readthedocs.org/en/latest/}{Flask-Restless}\footnote{https://flask-restless.readthedocs.org/en/latest/} to create a \textbf{REST API}, and \href{http://www.sqlalchemy.org/}{SQLAlchemy}\footnote{http://www.sqlalchemy.org/} and \href{http://www.mysql.com/}{MySQL}\footnote{http://www.mysql.com/} for \textbf{data persistence}.
+
+Students can then fetch their peers' work from the backend, to read it and discuss it orally between themselves. Later, the students' work is fetched by a client connected to a projector, and their texts are displayed for and discussed by the entire class.
+
+When I carried out workshops in Kungsholmens Gymnasium, teachers said it was the first time they had ever seen a system like this being used in a classroom\cite{ingulfson}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=115mm]{img/NRTopology.png}
+\caption{Topology of a Narrative Roulette system in a classroom}
+\label{overflow}
+\end{figure}
 
 \subsection{The benefits of being virtual}
 
@@ -79,7 +93,7 @@ so a major character is the narrator, who is the character defined by
 the round.
 
 Texts usually take the form of internal monologue. This gives the reader
-first-hand insight into the mental processes of the main character. It
+first-hand insight into the mental processes of the main character. From personal experience, I know that it
 also allows the writer to identify, examine and play around with the
 mental processes they believe the main character could be having.
 

@@ -22,10 +22,10 @@ available on the client-side, and removes the need to execute a
 different language on the server and then send back the results.
 
 However, I'm not a great fan of JavaScript when it comes to teaching
-beginners to program (see \href{https://www.destroyallsoftware.com/talks/wat}{here} for why, from 1:18). Instead, I chose to use
+beginners to program (see \href{https://www.destroyallsoftware.com/talks/wat}{here}\footnote{https://www.destroyallsoftware.com/talks/wat} for why, from 1:18). Instead, I chose to use
 a dialect of Lisp - Clojure (in its JavaScript-hosted form,
 ClojureScript) - as Lisp has a history of being a language well-suited
-for beginners (MIT has used it in an introductory \href{http://mitpress.mit.edu/sicp/course.html}{programming course} for years).
+for beginners (MIT has used it in an introductory \href{http://mitpress.mit.edu/sicp/course.html}{programming course}\footnote{http://mitpress.mit.edu/sicp/course.html} for years).
 
 \subsection{From ClojureScript to JavaScript}
 
@@ -88,7 +88,7 @@ We know the tighter the microworld loop, the more engaging the experience, so la
 
 \subsubsection{Kanaka to the rescue}
 
-Luckily for me, there was a \href{https://github.com/kanaka/clojurescript}{fork of ClojureScript} that did allow evaluation in the browser, written by Joel Martin
+Luckily for me, there was a \href{https://github.com/kanaka/clojurescript}{fork of ClojureScript}\footnote{https://github.com/kanaka/clojurescript} that did allow evaluation in the browser, written by Joel Martin
 (``Kanaka'' on Github). At the time of writing it is still a fork, and
 hasn't been merged with ClojureScript core, probably because it contains
 ``miscellaneous broken things that have not been tracked down yet''.
@@ -102,7 +102,7 @@ than it took me to explain why that was necessary.
 
 This might seem like a very convoluted mess to get into just to avoid
 writing pure JavaScript, which, after all, is good enough for sites like
-\href{http://codecademy.com}{Codecademy}. That's a fair point but I believe that the declarative
+\href{http://codecademy.com}{Codecademy}\footnote{http://codecademy.com}. That's a fair point but I believe that the declarative
 purity of ClojureScript forms makes up for the chaos going on behind the
 scenes. As you will soon see.
 
@@ -291,27 +291,7 @@ It successfully enabled the learning iterations of a microworld, but it
 required students to have too much prior knowledge for me to be able to
 conduct workshops with many students at once.
 
-\emph{Talking to Machines} offered learning about two topics: the syntax
-of a programming language, and hands-on knowledge of computation. These
-are distinct: a programmer can know that she wants to write a recursive
-loop, but not know the syntax for this in JavaScript.
-
-Hands-on knowledge about computation is hard to acquire without knowing
-a little syntax in at least one programming language. This is because if
-the \textbf{implementation} of your computational \textbf{idea} (such as
-how to print only odd integers less than 100) can only be expressed in
-pseudocode, you will only be able to \textbf{evaluate} your idea by
-writing it out by hand or asking a teacher if you are correct.
-
-Being able to write in the syntax of a programming language means being
-able to \textbf{implement} your computational \textbf{ideas} in a form
-that can be instantly \textbf{evaluated} by a machine. The advantage of this is that you can learn things in an effective, engaging way
-without having to ask for the permission or judgement of a human teacher
-or academic institution.
-
-The downside is that you need to learn that syntax before you can reap
-the rewards of machine evaluation. It is possible for students of
-\emph{Talking to Machines} to learn Lisp syntax through trial and error, by
+It is possible for students of \emph{Talking to Machines} to learn Lisp syntax through trial and error, by
 chopping and changing parentheses until the code evaluates. But this is
 not the most efficient way to learn syntax, so engagement suffers as a
 result.
