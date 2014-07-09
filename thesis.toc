@@ -32,11 +32,11 @@
 \contentsline {subsection}{Blogging}{18}{section*.26}
 \contentsline {chapter}{\numberline {2}Method}{20}{chapter.2}
 \contentsline {section}{\numberline {2.1}Choosing a method}{21}{section.2.1}
-\contentsline {subsection}{Constraints on our method}{21}{section*.27}
-\contentsline {subsection}{Method outline}{21}{section*.28}
-\contentsline {subsection}{Evaluating my methods}{21}{section*.29}
-\contentsline {subsection}{Evaluating \textit {Talking to Machines}}{22}{section*.30}
-\contentsline {subsection}{Evaluating \textit {Narrative Roulette}}{22}{section*.31}
+\contentsline {subsection}{Constraints on my method}{21}{section*.27}
+\contentsline {subsection}{Personal choices}{21}{section*.28}
+\contentsline {subsection}{Planning my evaluation}{21}{section*.29}
+\contentsline {subsection}{Planning how to evaluate \textit {Talking to Machines}}{22}{section*.30}
+\contentsline {subsection}{Planning how to evaluate \textit {Narrative Roulette}}{22}{section*.31}
 \contentsline {section}{\numberline {2.2}Talking to Machines}{23}{section.2.2}
 \contentsline {subsection}{From ClojureScript to JavaScript}{23}{section*.32}
 \contentsline {subsection}{So what does this mess actually mean, practically?}{24}{section*.33}
@@ -65,10 +65,7 @@
 \contentsline {subsection}{Arguments against constructionism}{40}{section*.52}
 \contentsline {section}{\numberline {3.2}What do microworlds mean for education?}{42}{section.3.2}
 \contentsline {subsection}{Agile methods vs The Waterfall Method}{42}{section*.53}
-\contentsline {subsection}{Are there schools teaching microworlds right now?}{43}{section*.54}
-\contentsline {subsubsection}{Berghs School of Communication}{43}{section*.55}
-\contentsline {subsubsection}{Hyper Island}{43}{section*.56}
 \contentsline {section}{\numberline {3.3}What problems are there with microworlds?}{44}{section.3.3}
-\contentsline {subsection}{Fully embracing microworlds}{44}{section*.57}
-\contentsline {subsection}{From lesson plans to microworld construction}{44}{section*.58}
+\contentsline {subsection}{Fully embracing microworlds}{44}{section*.54}
+\contentsline {subsection}{From lesson plans to microworld construction}{44}{section*.55}
 \contentsline {section}{\numberline {3.4}Conclusions}{46}{section.3.4}
