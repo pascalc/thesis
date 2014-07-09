@@ -31,41 +31,39 @@
 \contentsline {subsection}{Pacemaker (\url {http://pacemaker.net/})}{19}{section*.24}
 \contentsline {subsection}{Blogging}{19}{section*.25}
 \contentsline {chapter}{\numberline {3}Method}{21}{chapter.3}
-\contentsline {section}{\numberline {3.1}Choosing a method}{22}{section.3.1}
-\contentsline {subsection}{Constraints on my method}{22}{section*.26}
-\contentsline {subsection}{Personal choices}{22}{section*.27}
-\contentsline {subsection}{Planning my evaluation}{22}{section*.28}
-\contentsline {subsection}{Planning how to evaluate \textit {Talking to Machines}}{23}{section*.29}
-\contentsline {subsection}{Planning how to evaluate \textit {Narrative Roulette}}{23}{section*.30}
-\contentsline {section}{\numberline {3.2}Talking to Machines}{24}{section.3.2}
-\contentsline {subsection}{From ClojureScript to JavaScript}{24}{section*.31}
-\contentsline {subsection}{So what does this mess actually mean, practically?}{25}{section*.32}
-\contentsline {subsubsection}{Kanaka to the rescue}{25}{section*.33}
-\contentsline {subsection}{Why did I go to all this trouble?}{25}{section*.34}
-\contentsline {subsection}{A better first impression of programming}{26}{section*.35}
-\contentsline {subsection}{Declarative shapes}{26}{section*.36}
-\contentsline {subsection}{Looping in \emph {Talking to Machines}}{28}{section*.37}
-\contentsline {subsection}{Limitations of this microworld}{30}{section*.38}
-\contentsline {section}{\numberline {3.3}Narrative Roulette}{31}{section.3.3}
-\contentsline {subsection}{Implementing \textit {Narrative Roulette}}{31}{section*.39}
-\contentsline {subsection}{The benefits of being virtual}{32}{section*.40}
-\contentsline {subsection}{Narrative Roulette as a microworld}{33}{section*.41}
-\contentsline {subsection}{How do you explore this microworld?}{33}{section*.42}
-\contentsline {subsection}{Why is this worth doing?}{34}{section*.43}
-\contentsline {subsection}{How anonymity helps}{35}{section*.44}
-\contentsline {subsection}{Limitations of Narrative Roulette}{35}{section*.45}
-\contentsline {section}{\numberline {3.4}Narrative Roulette on the Web}{37}{section.3.4}
-\contentsline {subsection}{NarrativeRoulette.com}{37}{section*.46}
-\contentsline {subsection}{Is this still a microworld?}{37}{section*.47}
-\contentsline {subsection}{How did this work in practice?}{38}{section*.48}
-\contentsline {subsection}{NarrativeRoulette.com takeaways}{38}{section*.49}
-\contentsline {chapter}{\numberline {4}Results \& Discussion}{40}{chapter.4}
-\contentsline {section}{\numberline {4.1}Was Narrative Roulette successful?}{41}{section.4.1}
-\contentsline {subsection}{Did iterating the loop lead to learning?}{41}{section*.50}
-\contentsline {subsection}{Arguments against constructionism}{41}{section*.51}
-\contentsline {section}{\numberline {4.2}What do microworlds mean for education?}{43}{section.4.2}
-\contentsline {subsection}{Agile methods vs The Waterfall Method}{43}{section*.52}
-\contentsline {section}{\numberline {4.3}What problems are there with microworlds?}{45}{section.4.3}
-\contentsline {subsection}{Fully embracing microworlds}{45}{section*.53}
-\contentsline {subsection}{From lesson plans to microworld construction}{45}{section*.54}
-\contentsline {section}{\numberline {4.4}Conclusions}{47}{section.4.4}
+\contentsline {subsection}{Constraints on my method}{21}{section*.26}
+\contentsline {subsection}{Choice of implementation}{21}{section*.27}
+\contentsline {subsection}{How to evaluate my implementation}{22}{section*.28}
+\contentsline {chapter}{\numberline {4}Implementation}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}Talking to Machines}{24}{section.4.1}
+\contentsline {subsection}{From ClojureScript to JavaScript}{24}{section*.29}
+\contentsline {subsection}{So what does this mess actually mean, practically?}{25}{section*.30}
+\contentsline {subsubsection}{Kanaka to the rescue}{25}{section*.31}
+\contentsline {subsection}{Why did I go to all this trouble?}{25}{section*.32}
+\contentsline {subsection}{A better first impression of programming}{26}{section*.33}
+\contentsline {subsection}{Declarative shapes}{26}{section*.34}
+\contentsline {subsection}{Looping in \emph {Talking to Machines}}{28}{section*.35}
+\contentsline {subsection}{Limitations of this microworld}{30}{section*.36}
+\contentsline {section}{\numberline {4.2}Narrative Roulette}{31}{section.4.2}
+\contentsline {subsection}{Implementing \textit {Narrative Roulette}}{31}{section*.37}
+\contentsline {subsection}{The benefits of being virtual}{32}{section*.38}
+\contentsline {subsection}{Narrative Roulette as a microworld}{33}{section*.39}
+\contentsline {subsection}{How do you explore this microworld?}{33}{section*.40}
+\contentsline {subsection}{Why is this worth doing?}{34}{section*.41}
+\contentsline {subsection}{How anonymity helps}{35}{section*.42}
+\contentsline {subsection}{Limitations of Narrative Roulette}{35}{section*.43}
+\contentsline {section}{\numberline {4.3}Narrative Roulette on the Web}{37}{section.4.3}
+\contentsline {subsection}{NarrativeRoulette.com}{37}{section*.44}
+\contentsline {subsection}{Is this still a microworld?}{37}{section*.45}
+\contentsline {subsection}{How did this work in practice?}{38}{section*.46}
+\contentsline {subsection}{NarrativeRoulette.com takeaways}{38}{section*.47}
+\contentsline {chapter}{\numberline {5}Results \& Discussion}{40}{chapter.5}
+\contentsline {section}{\numberline {5.1}Was Narrative Roulette successful?}{41}{section.5.1}
+\contentsline {subsection}{Did iterating the loop lead to learning?}{41}{section*.48}
+\contentsline {subsection}{Arguments against constructionism}{41}{section*.49}
+\contentsline {section}{\numberline {5.2}What do microworlds mean for education?}{43}{section.5.2}
+\contentsline {subsection}{Agile methods vs The Waterfall Method}{43}{section*.50}
+\contentsline {section}{\numberline {5.3}What problems are there with microworlds?}{45}{section.5.3}
+\contentsline {subsection}{Fully embracing microworlds}{45}{section*.51}
+\contentsline {subsection}{From lesson plans to microworld construction}{45}{section*.52}
+\contentsline {section}{\numberline {5.4}Conclusions}{47}{section.5.4}
